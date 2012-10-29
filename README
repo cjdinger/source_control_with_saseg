@@ -1,0 +1,52 @@
+About this Example
+-------------------------
+The purpose of this example is to show how you can use modern source
+control management tools to manage your SAS work in SAS Enterprise Guide.
+
+This is possible through the use of the file system integration that most
+source control tools now offer.  For example, with CVS and Subversion you can use
+TortoiseCVS or TortoiseSVN to manage your local "playpen" of content.  With git, you can 
+use the github Tools for Windows.
+
+See more information at this blog post:
+http://blogs.sas.com/content/sasdummy/2012/10/29/scm-with-sas-eg/
+
+What this example contains
+----------------------------
+This example contains two versions of a SAS-based analysis project:
+* NetflixProject43.egp (for use with SAS Enterprise Guide 4.3)
+* NetflixProject51.egp (for use with SAS Enterprise Guide 5.1)
+
+Each of these projects reference the same set of external "assets", which
+are stored in subfolders relative to the EGP files:
+* ./data/NetflixHistory.xlsx  (one input data source)
+* ./data/NetflixInstantWatch.xlsx (another input data source)
+* ./programs/*.sas (several SAS programs used in the projects)
+
+In addition to managing your files locally, you must tell SAS Enterprise Guide
+about the important content that is stored in *relative* paths along with the
+project file (EGP file).
+
+This setting is maintained per project.  To set it:
+
+1. Select File->Project Properties.  The Properties window appears.
+2. Select the File References tab.
+3. Check the box: "Use paths relative to the project for programs and importable files"
+
+With this selected, you can now store .SAS program files and "importable" data files 
+(such as Excel, CSV, or Microsoft Access MDB files) in the same path with the EGP file *or* in a 
+subfolder of that path.  You can then copy the entire directory structure to any other
+location, and SAS Enterprise Guide will still be able to find and use those files.
+
+By removing the dependency on absolute paths for these resources, you can more easily share
+projects and their contents with colleagues.  You can maintain different versions of the 
+external "assets" (such as programs) by taking advantage of the features of the
+source control management tool.
+
+About this content
+------------------------
+The *content* of this example (analyzing the author's rental/streaming history) 
+is described in the following blog posts:
+* http://blogs.sas.com/content/sasdummy/2011/09/19/measuring-the-value-of-my-dvd-by-mail-movie-service/
+* http://blogs.sas.com/content/sasdummy/2011/10/05/netflix-streaming-analysi/
+
