@@ -6,6 +6,6 @@ datalines;
 1, Hatet den
 2, Likte den ikke
 3, Likte den
-4, Likte den virkelig
+4, Likte den godt
 5, Elsket den
 ;
