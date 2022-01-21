@@ -38,7 +38,6 @@ jobs:
         shell: cmd
         run: |
           dir
-          sas programs\create_ratings_data.sas -log c:\Users\sas\logfile.txt
-    
+          sas programs\create_ratings_data.sas  
 
     
