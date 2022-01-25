@@ -71,5 +71,5 @@ jobs:
       - name: run a scheduled EG script
         shell: powershell
         run: |
-          Compress-Archive -Path . ..\eg_package.zip
+          Compress-Archive -Force -Path . ..\eg_package.zip
       
