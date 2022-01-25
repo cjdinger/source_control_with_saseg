@@ -15,8 +15,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  testing:
+  # This workflow contains a single job for cicd - build, test and potentially deliver/deploy
+  build:
     # The type of runner that the job will run on
     runs-on: [self-hosted, race]
 
@@ -34,10 +34,26 @@ jobs:
           exit 0
 
       # Runs a single command using the runners shell
-      - name: run a sas program
+      - name: run a sas program to create ratings dataset
         shell: cmd
         run: |
           dir
           sas programs\create_ratings_data.sas  -log c:\users\sas\logfile.txt
 
-    
+
+# next job called "testing"
+  testing:
+    # The type of runner that the job will run on
+    runs-on: [self-hosted, race]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: run a scheduled EG script
+        shell: cmd
+        run: |
+          cscript EGScript2.vbs
+
