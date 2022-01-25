@@ -55,7 +55,5 @@ jobs:
       - name: run a scheduled EG script
         shell: cmd
         run: |
-          dir
-          sas programs\create_ratings_data.sas  -log c:\users\sas\logfile.txt
-
+          cscript EGScript2.vbs
 
