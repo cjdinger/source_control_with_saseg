@@ -1,0 +1,47 @@
+1                                           The SAS System              09:06 Friday, January 21, 2022
+
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M7) 
+      Licensed to DEMOCENTER - 9.4M7 (20W34)(8.19.21), Site 70068130.
+NOTE: This session is executing on the X64_DSRV16  platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.2
+      SAS/ETS 15.2
+      SAS/OR 15.2
+      SAS/IML 15.2
+
+NOTE: Additional host information:
+
+ X64_DSRV16 WIN 10.0.14393  Server
+
+NOTE: SAS initialization used:
+      real time           0.36 seconds
+      cpu time            0.18 seconds
+      
+1          ods graphics / width=1200 height=400 imagemap=on;
+2          title "Days out vs. When shipped";
+3          proc sgscatter data=work.TITLESDAYSRATINGS;
+ERROR: File WORK.TITLESDAYSRATINGS.DATA does not exist.
+4            plot DaysOut*Shipped;
+ERROR: No data set open to look up variables.
+ERROR: No data set open to look up variables.
+5          run;
+
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE SGSCATTER used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+6          ods graphics off;
+
+ERROR: Errors printed on page 1.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.41 seconds
+      cpu time            0.23 seconds
+      

@@ -1,0 +1,43 @@
+1                                           The SAS System              09:07 Friday, January 21, 2022
+
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M7) 
+      Licensed to DEMOCENTER - 9.4M7 (20W34)(8.19.21), Site 70068130.
+NOTE: This session is executing on the X64_DSRV16  platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.2
+      SAS/ETS 15.2
+      SAS/OR 15.2
+      SAS/IML 15.2
+
+NOTE: Additional host information:
+
+ X64_DSRV16 WIN 10.0.14393  Server
+
+NOTE: SAS initialization used:
+      real time           0.27 seconds
+      cpu time            0.24 seconds
+      
+1          data ratings;
+2          length stars 8 rating $ 15;
+3          infile datalines dsd;
+4          input stars rating;
+5          datalines;
+
+NOTE: The data set WORK.RATINGS has 5 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+11         ;
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.29 seconds
+      cpu time            0.24 seconds
+      

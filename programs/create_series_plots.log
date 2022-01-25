@@ -1,0 +1,109 @@
+1                                                          The SAS System                             08:47 Friday, January 21, 2022
+
+NOTE: Unable to open SASUSER.REGSTRY. WORK.REGSTRY will be opened instead.
+NOTE: All registry changes will be lost at the end of the session.
+
+WARNING: Unable to copy SASUSER registry to WORK registry. Because of this, you will not see registry customizations during this 
+         session.
+NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
+NOTE: All profile changes will be lost at the end of the session.
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M7) 
+      Licensed to DEMOCENTER - 9.4M7 (20W34)(8.19.21), Site 70068130.
+NOTE: This session is executing on the X64_DSRV16  platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.2
+      SAS/ETS 15.2
+      SAS/OR 15.2
+      SAS/IML 15.2
+
+NOTE: Additional host information:
+
+ X64_DSRV16 WIN 10.0.14393  Server
+
+NOTE: SAS initialization used:
+      real time           0.27 seconds
+      cpu time            0.21 seconds
+      
+1          ods graphics / height=500 width=1000;
+2          title "Days out vs. When shipped";
+3          proc sgscatter data=work.TITLESDAYSRATINGS;
+ERROR: File WORK.TITLESDAYSRATINGS.DATA does not exist.
+4          	plot DaysOut*Shipped;
+ERROR: No data set open to look up variables.
+ERROR: No data set open to look up variables.
+5          run;
+
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE SGSCATTER used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+6          
+7          title "Actual cost per DVD rental";
+
+
+8          proc sgplot data=TITLESDAYSRATINGS;
+ERROR: File WORK.TITLESDAYSRATINGS.DATA does not exist.
+9          	series x=shipped y=costpermovie;
+ERROR: No data set open to look up variables.
+ERROR: No data set open to look up variables.
+10         	yaxis label="Cost per DVD";
+11         	xaxis label="Date DVD shipped"  minor;
+2                                           The SAS System              08:47 Friday, January 21, 2022
+
+12         run;
+
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+13         
+14         title "Actual cost per DVD rental (Smoother applied)";
+
+
+15         proc sgplot data=TITLESDAYSRATINGS;
+ERROR: File WORK.TITLESDAYSRATINGS.DATA does not exist.
+16         	loess x=shipped y=costpermovie / smooth=.16;
+ERROR: No data set open to look up variables.
+ERROR: No data set open to look up variables.
+17         	yaxis label="Cost per DVD" max=10;
+18         	xaxis label="Date DVD shipped"  minor;
+19         run;
+
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+20         
+21         title "Average cost per DVD rental";
+
+
+22         proc sgplot data=work.tsmovies;
+ERROR: File WORK.TSMOVIES.DATA does not exist.
+23         	series x=shipped y=costpermovie;
+ERROR: No data set open to look up variables.
+ERROR: No data set open to look up variables.
+24         	yaxis label="Cost per DVD";
+25         	xaxis label="Date DVD shipped"  minor;
+26         run;
+
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+ERROR: Errors printed on pages 1,2.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.31 seconds
+      cpu time            0.23 seconds
+      
