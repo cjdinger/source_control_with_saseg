@@ -57,3 +57,19 @@ jobs:
         run: |
           cscript EGScript2.vbs
 
+# next job called "deliver"
+  deliver:
+    # The type of runner that the job will run on
+    runs-on: [self-hosted, race]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: run a scheduled EG script
+        shell: powershell
+        run: |
+          Compress-Archive -Path . ..\eg_package.zip
+      
